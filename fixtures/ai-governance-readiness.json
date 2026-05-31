@@ -1,0 +1,115 @@
+{
+  "snapshots": [
+    {
+      "id": "sales-copilot-agent",
+      "name": "Sales copilot agent",
+      "scope": "AGENT_FLEET",
+      "riskStatus": "WATCH",
+      "snapshotStatus": "CURRENT",
+      "controlPath": "/executive-intelligence/ai-governance/sales-copilot-agent",
+      "owner": "AI Governance Council",
+      "annualSpendUsd": 780000,
+      "boardExposureScore": 67,
+      "collectedAt": "2026-05-31T14:00:00Z"
+    },
+    {
+      "id": "support-resolution-agent",
+      "name": "Support resolution agent",
+      "scope": "WORKFLOW",
+      "riskStatus": "CRITICAL",
+      "snapshotStatus": "STALE",
+      "controlPath": "/executive-intelligence/ai-governance/support-resolution-agent",
+      "owner": "CX Platform",
+      "annualSpendUsd": 1140000,
+      "boardExposureScore": 81,
+      "collectedAt": "2026-05-27T09:20:00Z"
+    },
+    {
+      "id": "research-analyst-pilot",
+      "name": "Research analyst pilot",
+      "scope": "MODEL_STACK",
+      "riskStatus": "WATCH",
+      "snapshotStatus": "CURRENT",
+      "controlPath": "/executive-intelligence/ai-governance/research-analyst-pilot",
+      "owner": "Platform Strategy",
+      "annualSpendUsd": 420000,
+      "boardExposureScore": 59,
+      "collectedAt": "2026-05-31T11:40:00Z"
+    }
+  ],
+  "gaps": [
+    {
+      "id": "gap-policy-bundle",
+      "snapshotId": "sales-copilot-agent",
+      "resourcePath": "sales-copilot-agent / production escalation path",
+      "scope": "AGENT_FLEET",
+      "controlFamily": "PolicyBundle",
+      "status": "DEGRADED",
+      "expectedState": "Decision card and policy bundle are approved before production escalation is enabled.",
+      "observedState": "Production escalation is enabled while the policy bundle is still draft only.",
+      "gapWindowHours": 14,
+      "blocksBoardReadiness": true,
+      "note": "Commercial rollout is ahead of governance sign-off."
+    },
+    {
+      "id": "gap-tool-scope",
+      "snapshotId": "sales-copilot-agent",
+      "resourcePath": "sales-copilot-agent / crm-write tool scope",
+      "scope": "IDENTITY_LAYER",
+      "controlFamily": "Identity",
+      "status": "DEGRADED",
+      "expectedState": "Write scopes stay bounded to reversible, human-reviewed actions.",
+      "observedState": "Privileged production access still includes excessive write scope for CRM records.",
+      "gapWindowHours": 22,
+      "blocksBoardReadiness": true
+    },
+    {
+      "id": "gap-eval-coverage",
+      "snapshotId": "support-resolution-agent",
+      "resourcePath": "support-resolution-agent / refusal and escalation evals",
+      "scope": "WORKFLOW",
+      "controlFamily": "Eval",
+      "status": "CHANGED",
+      "expectedState": "Evaluation coverage remains above the launch threshold across escalation paths.",
+      "observedState": "Coverage 42% on escalation evals after the latest workflow change.",
+      "gapWindowHours": 39,
+      "blocksBoardReadiness": true
+    },
+    {
+      "id": "gap-spend-alert",
+      "snapshotId": "research-analyst-pilot",
+      "resourcePath": "research-analyst-pilot / model vendor spend guardrail",
+      "scope": "VENDOR_LAYER",
+      "controlFamily": "Spend",
+      "status": "DEGRADED",
+      "expectedState": "Spend alerts stay active and savings assumptions are quantified before broader rollout.",
+      "observedState": "Spend alert disabled and savings not quantified against the fallback vendor lane.",
+      "gapWindowHours": 11,
+      "blocksBoardReadiness": false
+    },
+    {
+      "id": "gap-data-boundary",
+      "snapshotId": "research-analyst-pilot",
+      "resourcePath": "research-analyst-pilot / retrieval boundary",
+      "scope": "MODEL_STACK",
+      "controlFamily": "DataBoundary",
+      "status": "CHANGED",
+      "expectedState": "Tenant and data-residency boundary remain explicit in retrieval design.",
+      "observedState": "Unclear boundary between internal and client-facing retrieval corpora after the latest pilot refresh.",
+      "gapWindowHours": 19,
+      "blocksBoardReadiness": true
+    },
+    {
+      "id": "gap-board-pack",
+      "snapshotId": "support-resolution-agent",
+      "resourcePath": "q2 executive board packet / ai readiness memo",
+      "scope": "BOARD_PROGRAM",
+      "controlFamily": "Reporting",
+      "status": "DEGRADED",
+      "expectedState": "Board memo is refreshed for the current quarter with current score, savings, and exposure narrative.",
+      "observedState": "Stale board memo is 32 days old and still references the prior workflow baseline.",
+      "gapWindowHours": 32,
+      "blocksBoardReadiness": true
+    }
+  ]
+}

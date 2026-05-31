@@ -1,0 +1,29 @@
+{
+  "snapshots": [
+    {
+      "id": "board-ai-program",
+      "name": "Board AI program",
+      "scope": "BOARD_PROGRAM",
+      "riskStatus": "HEALTHY",
+      "snapshotStatus": "CURRENT",
+      "controlPath": "/executive-intelligence/ai-governance/board-ai-program",
+      "owner": "CTO Staff",
+      "annualSpendUsd": 650000,
+      "boardExposureScore": 28,
+      "collectedAt": "2026-05-31T13:00:00Z"
+    },
+    {
+      "id": "support-agent-core",
+      "name": "Support agent core",
+      "scope": "WORKFLOW",
+      "riskStatus": "HEALTHY",
+      "snapshotStatus": "CURRENT",
+      "controlPath": "/executive-intelligence/ai-governance/support-agent-core",
+      "owner": "CX Platform",
+      "annualSpendUsd": 890000,
+      "boardExposureScore": 33,
+      "collectedAt": "2026-05-31T12:10:00Z"
+    }
+  ],
+  "gaps": []
+}
